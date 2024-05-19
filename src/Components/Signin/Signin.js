@@ -1,8 +1,9 @@
 import React from 'react'
+import './Signin.css'
 
 function Signin() {
   return (
-     <div>
+     <div className='signin'>
       <div className='container'>
         <form>
             <label>first-name</label>
@@ -13,6 +14,7 @@ function Signin() {
             <input type="email" name='email' className='email' placeholder='email' />
             <label>password</label>
             <input type="password" name='password' className='password' placeholder='password' />
+            <button>Submit</button>
         </form>
       </div>
     </div>
