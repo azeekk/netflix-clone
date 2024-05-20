@@ -20,3 +20,31 @@
     right: 20px;    
     width: 30px;
 }
+.left {
+    width: 100%;
+}
+.right {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+.login {
+    width: 50px;
+    height: 25px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 80px;
+    text-decoration: none;
+}
+.signup {
+    width: 50px;
+    height: 25px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    text-decoration: none;
+}

@@ -1,9 +1,11 @@
 import React from 'react'
+import Navbar from '../Navbar/Navbar'
 
 function Login() {
   return (
     <div>
             <div className='signin'>
+              <Navbar />
       <div className='container'>
         <form>
             <label>email</label>
