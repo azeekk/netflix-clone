@@ -12,8 +12,9 @@ const [password,setPassword] = useState('')
 
 function handleSubmit(e) {
   e.preventDefault()
-  Firebase.auth().createUserWithEmailAndPassword(email,password).then(()=>{
+  Firebase.auth().createUserWithEmailAndPassword(email,password).then((result) => {
     Firebase.firestore().collection('users').add({
+      id:result.user.uid,
       firstname:firstName,
       secondname:secondName
     })
