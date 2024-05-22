@@ -3,6 +3,7 @@ import {useNavigate} from 'react-router-dom'
 import Navbar from '../Navbar/Navbar'
 import { Firebase } from '../../Firebase/firebase';
 import { AuthContext } from '../../store/Context';
+import "./Login.css"
 
 function Login() {
   const [email,setEmail] = useState('');
@@ -21,7 +22,7 @@ function Login() {
 
   return (
     <div>
-            <div className='signin'>
+            <div className='login'>
               <Navbar />
       <div className='container'>
         <form>

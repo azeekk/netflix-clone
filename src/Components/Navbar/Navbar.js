@@ -2,12 +2,13 @@ import React,{useContext} from 'react'
 import "./Navbar.css"
 import {Link} from 'react-router-dom'
 import { AuthContext } from '../../store/Context'
-import {Firebase} from '../../Firebase/firebase'
+import { Firebase } from '../../Firebase/firebase'
 
 function Navbar() {
 const {user} = useContext(AuthContext)
 console.log(user)
-function logOut() {
+
+const logOut = () => {
   Firebase.auth().signOut()
 }
 
@@ -20,12 +21,12 @@ function logOut() {
         {user ? (
           <>
      <Link to={'/signin'} style={{textDecoration:'none'}}><span className='signup'>{user.displayName}</span></Link>
-     <Link to={'/login'} style={{textDecoration:'none'}}><span className='login' onClick={logOut} >{user && 'Logout'}</span></Link>
+     <Link to={'/netflix-clone'} style={{textDecoration:'none'}}><span className='login_login'onClick={logOut} >{user && 'Logout'}</span></Link>
       <img className='avatar' src="https://i.pinimg.com/originals/0d/dc/ca/0ddccae723d85a703b798a5e682c23c1.png" alt="Avatar"></img>
       </> ) : (
         <>
         <Link to={'/signin'} style={{textDecoration:'none'}}><span className='signup'>Signup</span></Link>
-     <Link to={'/login'} style={{textDecoration:'none'}}><span className='login'>Login</span></Link>
+     <Link to={'/login'} style={{textDecoration:'none'}}><span className='login_login'>Login</span></Link>
       <img className='avatar' src="https://i.pinimg.com/originals/0d/dc/ca/0ddccae723d85a703b798a5e682c23c1.png" alt="Avatar"></img>
         </>
       )}
