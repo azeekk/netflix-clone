@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import {useState } from 'react'
+import {useNavigate} from 'react-router-dom'
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
 import './Signin.css'
@@ -9,17 +10,23 @@ const [firstName,setFirstName] = useState('');
 const [secondName,setSecondName] = useState('');
 const [email,setEmail] = useState('');
 const [password,setPassword] = useState('')
+const navigate = useNavigate()
 
 function handleSubmit(e) {
   e.preventDefault()
   Firebase.auth().createUserWithEmailAndPassword(email,password).then((result) => {
-    Firebase.firestore().collection('users').add({
-      id:result.user.uid,
-      firstname:firstName,
-      secondname:secondName
+    result.user.updateProfile({displayName:firstName}).then(() => {
+      Firebase.firestore().collection('users').add({
+        id:result.user.uid,
+        firstName:firstName,
+        secondName:secondName
+      }).then(() => {
+        navigate('/login')
+      })
     })
   })
 }
+
   return (
      <div className='signin'>
       <Navbar />

@@ -1,18 +1,23 @@
-import React,{useState} from 'react'
+import React,{useContext, useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import Navbar from '../Navbar/Navbar'
 import { Firebase } from '../../Firebase/firebase';
+import { AuthContext } from '../../store/Context';
 
 function Login() {
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
   const navigate = useNavigate()
-  function handleSubmit(e) {
+  const {user} = useContext(AuthContext)
+
+  function handleLogin(e) {
     e.preventDefault();
-    Firebase.auth().signInWithEmailAndPassword(email,password).then(()=>{
+    Firebase.auth().signInWithEmailAndPassword(email,password).then(() => {
+      console.log(user);
       navigate('/netflix-clone')
     })
   }
+
 
   return (
     <div>
@@ -39,7 +44,7 @@ function Login() {
             className='password'
             placeholder='password' />
 
-            <button onClick={handleSubmit}>Login</button>
+            <button onClick={handleLogin}>Login</button>
         </form>
       </div>
     </div>

@@ -15,6 +15,7 @@ function App() {
       setUser(user)
     })
   })
+
   return (
     <div className="App">
       <BrowserRouter>

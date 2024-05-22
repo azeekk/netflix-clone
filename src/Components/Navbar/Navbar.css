@@ -29,9 +29,7 @@
     width: 100%;
 }
 .login {
-    width: 50px;
-    height: 25px;
-    background-color: white;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,9 +37,7 @@
     text-decoration: none;
 }
 .signup {
-    width: 50px;
-    height: 25px;
-    background-color: white;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;

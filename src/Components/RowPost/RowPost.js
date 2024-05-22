@@ -9,7 +9,6 @@ function RowPost(props) {
   const [urlId, setUrlId] = useState('')
   useEffect(()=>{
       axios.get(props.url).then((response)=>{
-      console.log(response.data.results); 
       setMovies(response.data.results);
     })
   },)
